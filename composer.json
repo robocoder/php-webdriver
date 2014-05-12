@@ -31,12 +31,14 @@
     },
     "autoload": {
         "psr-0": {
-            "WebDriver": "lib/"
+            "Selenium": "src/",
+            "WebDriver": "src/"
        }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.4.x-dev"
+            "dev-master": "1.4.x-dev",
+            "dev-selenium": "2.0.x-dev"
         }
     }
 }
