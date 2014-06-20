@@ -28,7 +28,7 @@ namespace WebDriver;
  *
  * @method integer status() Get application cache status.
  */
-final class ApplicationCache extends AbstractWebDriver
+class ApplicationCache extends AbstractWebDriver
 {
     /**
      * {@inheritdoc}

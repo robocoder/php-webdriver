@@ -44,7 +44,7 @@ namespace WebDriver;
  * @method array size() Determine an element's size in pixels.
  * @method string css($propertyName) Query the value of an element's computed CSS property.
  */
-final class Element extends Container
+class Element extends Container
 {
     /**
      * {@inheritdoc}

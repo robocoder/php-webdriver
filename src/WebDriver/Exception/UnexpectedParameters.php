@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class UnexpectedParameters extends BaseException {
+class UnexpectedParameters extends BaseException {
 }

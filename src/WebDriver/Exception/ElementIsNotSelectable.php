@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class ElementIsNotSelectable extends BaseException {
+class ElementIsNotSelectable extends BaseException {
 }

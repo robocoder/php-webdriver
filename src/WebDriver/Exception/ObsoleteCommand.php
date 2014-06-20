@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class ObsoleteCommand extends BaseException {
+class ObsoleteCommand extends BaseException {
 }

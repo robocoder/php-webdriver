@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class ScriptTimeout extends BaseException {
+class ScriptTimeout extends BaseException {
 }

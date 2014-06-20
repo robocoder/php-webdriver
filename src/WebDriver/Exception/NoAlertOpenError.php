@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class NoAlertOpenError extends BaseException {
+class NoAlertOpenError extends BaseException {
 }

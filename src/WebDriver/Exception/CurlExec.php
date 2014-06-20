@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class CurlExec extends BaseException {
+class CurlExec extends BaseException {
 }

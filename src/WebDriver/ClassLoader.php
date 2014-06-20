@@ -26,7 +26,7 @@ namespace WebDriver;
  *
  * @package WebDriver
  */
-final class ClassLoader
+class ClassLoader
 {
     /**
      * Load class

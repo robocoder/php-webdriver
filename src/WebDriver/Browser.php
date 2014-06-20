@@ -27,7 +27,7 @@ namespace WebDriver;
  *
  * @package WebDriver
  */
-final class Browser
+class Browser
 {
     /**
      * Check browser names used in static functions in the selenium source:

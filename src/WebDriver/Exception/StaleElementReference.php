@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class StaleElementReference extends BaseException {
+class StaleElementReference extends BaseException {
 }

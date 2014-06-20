@@ -35,7 +35,7 @@ namespace WebDriver;
  * @method void longclick($jsonElement) Long press on the touch screen using finger motion events.
  * @method void flick($json) Flick on the touch screen using finger motion events.
  */
-final class Touch extends AbstractWebDriver
+class Touch extends AbstractWebDriver
 {
     /**
      * {@inheritdoc}

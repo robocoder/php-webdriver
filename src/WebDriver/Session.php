@@ -59,7 +59,7 @@ namespace WebDriver;
  * @method boolean getBrowser_connection() Is browser online?
  * @method void postBrowser_connection($jsonState) Set browser online.
  */
-final class Session extends Container
+class Session extends Container
 {
     /**
      * @var array

@@ -28,7 +28,7 @@ namespace WebDriver;
  *
  * @method void parentt() Change focus to the parent context.
  */
-final class Frame extends AbstractWebDriver
+class Frame extends AbstractWebDriver
 {
     /**
      * {@inheritdoc}

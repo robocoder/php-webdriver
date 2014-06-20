@@ -27,7 +27,7 @@ namespace WebDriver;
  *
  * @package WebDriver
  */
-final class Key
+class Key
 {
     /*
      * The Unicode "Private Use Area" code points (0xE000-0xF8FF) are used to represent

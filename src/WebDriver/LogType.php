@@ -26,7 +26,7 @@ namespace WebDriver;
  *
  * @package WebDriver
  */
-final class LogType
+class LogType
 {
     /**
      * Log Type

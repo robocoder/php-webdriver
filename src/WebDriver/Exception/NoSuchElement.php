@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class NoSuchElement extends BaseException {
+class NoSuchElement extends BaseException {
 }

@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class NoSuchWindow extends BaseException {
+class NoSuchWindow extends BaseException {
 }

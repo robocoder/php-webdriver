@@ -33,7 +33,7 @@ namespace WebDriver;
  * @method void postPosition($json) Change position of the window.
  * @method void maximize() Maximize the window if not already maximized.
  */
-final class Window extends AbstractWebDriver
+class Window extends AbstractWebDriver
 {
     /**
      * Window handle

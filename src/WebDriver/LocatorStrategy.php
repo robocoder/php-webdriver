@@ -27,7 +27,7 @@ namespace WebDriver;
  *
  * @package WebDriver
  */
-final class LocatorStrategy
+class LocatorStrategy
 {
     const CLASS_NAME        = 'class name';
     const CSS_SELECTOR      = 'css selector';

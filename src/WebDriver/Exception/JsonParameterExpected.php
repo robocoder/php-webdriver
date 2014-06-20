@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class JsonParameterExpected extends BaseException {
+class JsonParameterExpected extends BaseException {
 }

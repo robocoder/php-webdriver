@@ -28,7 +28,7 @@ namespace WebDriver;
  *
  * @package WebDriver
  */
-final class ServiceFactory
+class ServiceFactory
 {
     /**
      * singleton

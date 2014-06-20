@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class InvalidElementCoordinates extends BaseException {
+class InvalidElementCoordinates extends BaseException {
 }

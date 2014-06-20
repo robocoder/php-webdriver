@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class InvalidElementState extends BaseException {
+class InvalidElementState extends BaseException {
 }

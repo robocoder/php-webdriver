@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class UnknownLocatorStrategy extends BaseException {
+class UnknownLocatorStrategy extends BaseException {
 }

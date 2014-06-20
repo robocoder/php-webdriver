@@ -29,5 +29,5 @@ use WebDriver\Exception as BaseException;
  *
  * @package WebDriver
  */
-final class InvalidRequest extends BaseException {
+class InvalidRequest extends BaseException {
 }

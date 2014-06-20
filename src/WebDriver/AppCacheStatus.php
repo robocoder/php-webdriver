@@ -26,7 +26,7 @@ namespace WebDriver;
  *
  * @package WebDriver
  */
-final class AppCacheStatus
+class AppCacheStatus
 {
     /**
      * Application cache status

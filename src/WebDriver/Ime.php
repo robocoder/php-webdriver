@@ -32,7 +32,7 @@ namespace WebDriver;
  * @method void deactivate() De-activates the currently active IME engine.
  * @method void activate($json) Make an engine that is available active.
  */
-final class Ime extends AbstractWebDriver
+class Ime extends AbstractWebDriver
 {
     /**
      * {@inheritdoc}
