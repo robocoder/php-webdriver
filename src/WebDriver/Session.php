@@ -72,34 +72,33 @@ class Session extends Container
     protected function methods()
     {
         return array(
-            'window_handle' => array('GET'),
-            'window_handles' => array('GET'),
-            'url' => array('GET', 'POST'), // alternate for POST, use open($url)
-            'forward' => array('POST'),
-            'back' => array('POST'),
-            'refresh' => array('POST'),
-            'execute' => array('POST'),
-            'execute_async' => array('POST'),
-            'screenshot' => array('GET'),
-            'cookie' => array('GET', 'POST'), // for DELETE, use deleteAllCookies()
-            'source' => array('GET'),
-            'title' => array('GET'),
-            'keys' => array('POST'),
-            'orientation' => array('GET', 'POST'),
-            'alert_text' => array('GET', 'POST'),
-            'accept_alert' => array('POST'),
-            'dismiss_alert' => array('POST'),
-            'moveto' => array('POST'),
-            'click' => array('POST'),
-            'buttondown' => 'POST',
-            'buttonup' => array('POST'),
-            'doubleclick' => array('POST'),
-            'execute_sql' => array('POST'),
-            'location' => array('GET', 'POST'),
-            'browser_connection' => array('GET', 'POST'),
+            'window_handle'      => array('GET'),         // WD:getCurrentWindowHandle
+            'window_handles'     => array('GET'),         // WD:getWindowHandles
+            'url'                => array('GET', 'POST'), // WD:getCurrentUrl; WD:get - alternate for POST, use open($url)
+            'forward'            => array('POST'),        // WD:goForward
+            'back'               => array('POST'),        // WD:goBack
+            'refresh'            => array('POST'),        // WD:refresh
+            'execute'            => array('POST'),        // WD:executeScript
+            'execute_async'      => array('POST'),        // WD:executeAsyncScript
+            'screenshot'         => array('GET'),         // WD:screenshot
+            'cookie'             => array('GET', 'POST'), // for DELETE, use deleteAllCookies()
+            'source'             => array('GET'),         // WD:getPageSource
+            'title'              => array('GET'),         // WD:getTitle
+            'keys'               => array('POST'),        // WD:sendKeysToActiveElement
+            'orientation'        => array('GET', 'POST'), // WD:getScreenOrientation, WD:setScreenOrientation
+            'alert_text'         => array('GET', 'POST'), // WD:getAlertText, WD:setAlertValue
+            'accept_alert'       => array('POST'),        // WD:acceptAlert
+            'dismiss_alert'      => array('POST'),        // WD:dismissAlert
+            'moveto'             => array('POST'),        // WD:mouseMoveTo
+            'click'              => array('POST'),        // WD:mouseClick
+            'buttondown'         => 'POST',               // WD:mouseButtonDown
+            'buttonup'           => array('POST'),        // WD:mouseButtonUp
+            'doubleclick'        => array('POST'),        // WD:mouseDoubleClick
+            'location'           => array('GET', 'POST'), // WD:getLocation, WD:setLocation
+            'browser_connection' => array('GET', 'POST'), // WD:isBrowserOnline, WD:setBrowserOnLine
 
             // specific to Java SeleniumServer
-            'file' => array('POST'),
+            'file'               => array('POST'),        // WD:uploadFile
         );
     }
 
@@ -109,16 +108,19 @@ class Session extends Container
     protected function obsoleteMethods()
     {
         return array(
-            'modifier' => array('POST'),
-            'speed' => array('GET', 'POST'),
-            'alert' => array('GET'),
-            'visible' => array('GET', 'POST'),
+            'modifier'    => array('POST'),
+            'speed'       => array('GET', 'POST'),
+            'alert'       => array('GET'),
+            'visible'     => array('GET', 'POST'),
+            'execute_sql' => array('POST'),
         );
     }
 
     /**
      * Open URL: /session/:sessionId/url (POST)
      * An alternative to $session->url($url);
+     *
+     * @internal WD:get
      *
      * @param string $url
      *
@@ -133,6 +135,8 @@ class Session extends Container
 
     /**
      * Get browser capabilities: /session/:sessionId (GET)
+     *
+     * @internal WD:getCapabilities
      *
      * @return mixed
      */
@@ -149,6 +153,8 @@ class Session extends Container
 
     /**
      * Close session: /session/:sessionId (DELETE)
+     *
+     * @internal WD:quit
      *
      * @return mixed
      */
@@ -169,6 +175,8 @@ class Session extends Container
      *
      * Note: get cookie by name not implemented in API
      *
+     * @internal WD:getCookies
+     *
      * @return mixed
      */
     public function getAllCookies()
@@ -181,6 +189,8 @@ class Session extends Container
     /**
      * Set cookie: /session/:sessionId/cookie (POST)
      * Alternative to: $session->cookie($cookie_json);
+     *
+     * @internal WD:addCookie
      *
      * @param array $cookieJson
      *
@@ -196,6 +206,8 @@ class Session extends Container
     /**
      * Delete all cookies: /session/:sessionId/cookie (DELETE)
      *
+     * @internal WD:deleteAllCookies
+     *
      * @return \WebDriver\Session
      */
     public function deleteAllCookies()
@@ -207,6 +219,8 @@ class Session extends Container
 
     /**
      * Delete a cookie: /session/:sessionId/cookie/:name (DELETE)
+     *
+     * @internal WD:deleteCookie
      *
      * @param string $cookieName
      *
@@ -224,6 +238,8 @@ class Session extends Container
      * - $session->window() - close current window
      * - $session->window($name) - set focus
      * - $session->window($window_handle)->method() - chaining
+     *
+     * @internal WD:close, WD:switchToWindow
      *
      * @return \WebDriver\Window|\WebDriver\Session
      */
@@ -280,6 +296,8 @@ class Session extends Container
      * - $session->frame($json) - change focus to another frame on the page
      * - $session->frame()->method() - chaining
      *
+     * @internal WD:switchToFrame
+     *
      * @return \WebDriver\Session|\WebDriver\Frame
      */
     public function frame()
@@ -300,6 +318,8 @@ class Session extends Container
      * timeouts methods: /session/:sessionId/timeouts (POST)
      * - $session->timeouts($json) - set timeout for an operation
      * - $session->timeouts()->method() - chaining
+     *
+     * @internal WD:setTimeout
      *
      * @return \WebDriver\Session|\WebDriver\Timeouts
      */
@@ -343,6 +363,8 @@ class Session extends Container
     /**
      * Get active element (i.e., has focus): /session/:sessionId/element/active (POST)
      * - $session->activeElement()
+     *
+     * @internal WD:getActiveElement
      *
      * @return mixed
      */
@@ -402,6 +424,8 @@ class Session extends Container
      * log methods: /session/:sessionId/log (POST)
      * - $session->log($type) - get log for given log type
      * - $session->log()->method() - chaining
+     *
+     * @internal WD:getLog
      *
      * @return mixed
      */

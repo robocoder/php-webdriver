@@ -36,7 +36,7 @@ class Frame extends AbstractWebDriver
     protected function methods()
     {
         return array(
-            'parent' => array('POST'),
+            'parent' => array('POST'), // WD:switchToParentFrame
         );
     }
 }

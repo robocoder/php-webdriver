@@ -36,7 +36,7 @@ class ApplicationCache extends AbstractWebDriver
     protected function methods()
     {
         return array(
-            'status' => array('GET'),
+            'status' => array('GET'), // WD:getStatus
         );
     }
 }

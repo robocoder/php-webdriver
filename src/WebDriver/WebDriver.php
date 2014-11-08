@@ -37,13 +37,16 @@ class WebDriver extends AbstractWebDriver
     protected function methods()
     {
         return array(
-            'status' => 'GET',
+            'logs'   => 'POST', // WD:getSessionLogs
+            'status' => 'GET',  // WD:status
         );
     }
 
     /**
      * New Session: /session (POST)
      * Get session object for chaining
+     *
+     * @internal WD:newSession
      *
      * @param array|string $requiredCapabilities Required capabilities (or browser name)
      * @param array        $desiredCapabilities  Desired capabilities
@@ -81,6 +84,8 @@ class WebDriver extends AbstractWebDriver
 
     /**
      * Get list of currently active sessions
+     *
+     * @internal WD:getAllSessions
      *
      * @return array an array of \WebDriver\Session objects
      */

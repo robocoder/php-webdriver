@@ -39,8 +39,8 @@ class Timeouts extends AbstractWebDriver
     protected function methods()
     {
         return array(
-            'async_script' => array('POST'),
-            'implicit_wait' => array('POST'),
+            'async_script'  => array('POST'), // WD:setScriptTimeout
+            'implicit_wait' => array('POST'), // WD:implicitlyWait
         );
     }
 

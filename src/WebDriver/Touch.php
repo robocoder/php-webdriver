@@ -43,14 +43,14 @@ class Touch extends AbstractWebDriver
     protected function methods()
     {
         return array(
-            'click' => array('POST'),
-            'down' => array('POST'),
-            'up' => array('POST'),
-            'move' => array('POST'),
-            'scroll' => array('POST'),
-            'doubleclick' => array('POST'),
-            'longclick' => array('POST'),
-            'flick' => array('POST'),
+            'click'       => array('POST'), // WD:touchSingleTap
+            'down'        => array('POST'), // WD:touchDown
+            'up'          => array('POST'), // WD:touchUp
+            'move'        => array('POST'), // WD:touchMove
+            'scroll'      => array('POST'), // WD:touchScroll
+            'doubleclick' => array('POST'), // WD:touchDoubleTap
+            'longclick'   => array('POST'), // WD:touchLongPress
+            'flick'       => array('POST'), // WD:touchFlick
         );
     }
 }

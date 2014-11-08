@@ -40,11 +40,11 @@ class Ime extends AbstractWebDriver
     protected function methods()
     {
         return array(
-            'available_engines' => array('GET'),
-            'active_engine' => array('GET'),
-            'activated' => array('GET'),
-            'deactivate' => array('POST'),
-            'activate' => array('POST'),
+            'available_engines' => array('GET'),  // WD:imeGetAvailableEngines
+            'active_engine'     => array('GET'),  // WD:imeGetActiveEngine
+            'activated'         => array('GET'),  // WD:imeIsActivated
+            'deactivate'        => array('POST'), // WD:imeDeactive
+            'activate'          => array('POST'), // WD:imeActivateEngine
         );
     }
 }

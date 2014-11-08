@@ -36,7 +36,7 @@ class Log extends AbstractWebDriver
     protected function methods()
     {
         return array(
-            'types' => array('GET'),
+            'types' => array('GET'), // WD:getAvailableLogTypes
         );
     }
 }

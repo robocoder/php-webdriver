@@ -55,7 +55,8 @@ class ServiceFactory
         $this->services = array();
 
         $this->serviceClasses = array(
-            'service.curl' => '\\WebDriver\\Service\\CurlService',
+            'service.curl'  => '\\WebDriver\\Service\\CurlService',
+            'service.event' => '\\WebDriver\\Service\\EventDispatcher',
         );
     }
 

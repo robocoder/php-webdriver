@@ -48,6 +48,8 @@ abstract class Container extends AbstractWebDriver
      * Find child element: /session/:sessionId/element/:id/element (POST)
      * Search for element on page, starting from the document root.
      *
+     * @internal WD:findElement, WD:findChildElement
+     *
      * @param string $using the locator strategy to use
      * @param string $value the search target
      *
@@ -97,6 +99,8 @@ abstract class Container extends AbstractWebDriver
      * Find elements: /session/:sessionId/elements (POST)
      * Find child elements: /session/:sessionId/element/:id/elements (POST)
      * Search for multiple elements on page, starting from the document root.
+     *
+     * @internal WD:findElements, WD:findChildElements
      *
      * @param string $using the locator strategy to use
      * @param string $value the search target

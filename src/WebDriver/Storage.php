@@ -40,13 +40,15 @@ abstract class Storage extends AbstractWebDriver
     protected function methods()
     {
         return array(
-            'key' => array('GET', 'DELETE'),
-            'size' => array('GET'),
+            'key'  => array('GET', 'DELETE'), // WD:getLocalStorageItem, WD:getSessionStorageItem, WD:removeLocalStorageItem, WD:removeSessionStorageItem
+            'size' => array('GET'),           // WD:getLocalStorageSize, WD:getSessionStorageSize
         );
     }
 
     /**
      * Get all keys from storage or a specific key/value pair
+     *
+     * @internal WD:getLocalStorageKeys, WD:getSessionStorageKeys
      *
      * @return mixed
      */
@@ -69,6 +71,8 @@ abstract class Storage extends AbstractWebDriver
 
     /**
      * Set specific key/value pair
+     *
+     * @internal WD:setLocalStorageItem, WD:setSessionStorageItem
      *
      * @return \WebDriver\Storage
      *
@@ -99,6 +103,8 @@ abstract class Storage extends AbstractWebDriver
 
     /**
      * Delete storage or a specific key
+     *
+     * @internal WD:clearLocalStorage, WD:clearSessionStorage, WD:removeLocalStorageItem, WD:removeSessionStorageItem
      *
      * @return \WebDriver\Storage
      *

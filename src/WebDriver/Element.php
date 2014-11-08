@@ -52,21 +52,21 @@ class Element extends Container
     protected function methods()
     {
         return array(
-            'click' => array('POST'),
-            'submit' => array('POST'),
-            'text' => array('GET'),
-            'value' => array('POST'),
-            'name' => array('GET'),
-            'clear' => array('POST'),
-            'selected' => array('GET'),
-            'enabled' => array('GET'),
-            'attribute' => array('GET'),
-            'equals' => array('GET'),
-            'displayed' => array('GET'),
-            'location' => array('GET'),
-            'location_in_view' => array('GET'),
-            'size' => array('GET'),
-            'css' => array('GET'),
+            'clear'            => array('POST'), // WD:clearElement
+            'click'            => array('POST'), // WD:clickElement
+            'value'            => array('POST'), // WD:sendKeysToElement
+            'submit'           => array('POST'), // WD:submitElement
+            'text'             => array('GET'),  // WD:getElementText
+            'name'             => array('GET'),  // WD:getElementTagName
+            'selected'         => array('GET'),  // WD:isElementSelected
+            'enabled'          => array('GET'),  // WD:isElementEnabled
+            'displayed'        => array('GET'),  // WD:isElementDisplayed
+            'location'         => array('GET'),  // WD:getElementLocation
+            'location_in_view' => array('GET'),  // WD:getElementLocationOnceScrolledIntoView
+            'size'             => array('GET'),  // WD:getELementSize
+            'attribute'        => array('GET'),  // WD:getElementAttribute
+            'css'              => array('GET'),  // WD:getElementValueOfCssProperty
+            'equals'           => array('GET'),  // WD:elementEquals
         );
     }
 
@@ -76,11 +76,11 @@ class Element extends Container
     protected function obsoleteMethods()
     {
         return array(
-            'value' => array('GET'),
+            'value'    => array('GET'),
             'selected' => array('POST'),
-            'toggle' => array('POST'),
-            'hover' => array('POST'),
-            'drag' => array('POST'),
+            'toggle'   => array('POST'),
+            'hover'    => array('POST'),
+            'drag'     => array('POST'),
         );
     }
 

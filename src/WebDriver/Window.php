@@ -48,9 +48,9 @@ class Window extends AbstractWebDriver
     protected function methods()
     {
         return array(
-            'size' => array('GET', 'POST'),
-            'position' => array('GET', 'POST'),
-            'maximize' => array('POST'),
+            'size'     => array('GET', 'POST'), // WD:getWindowSize, WD:setWindowSize
+            'position' => array('GET', 'POST'), // WD:getWindowPosition, WD:setWindowPosition
+            'maximize' => array('POST'),        // WD:maximizeWindow
         );
     }
 
